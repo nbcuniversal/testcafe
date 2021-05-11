@@ -1,11 +1,11 @@
-FROM node
+FROM node:latest
 
 ENV CHROME=/usr/bin/google-chrome
 ENV DISPLAY=:99
 
 # Install Chrome
 RUN apt-get update && \
-    apt-get install -y xvfb libgconf2-4 libnss3-1d libxss1
+    apt-get install -y xvfb libgconf2-4 libxss1
 
 RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 RUN dpkg -i google-chrome-stable_current_amd64.deb; apt-get -fy install
